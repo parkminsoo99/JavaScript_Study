@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				let current = false
+				const input = document.querySelector('input')
+				const p = document.querySelector('p')
+				
+				input.addEventListener('change', (event) =>{
+					current = event.currentTarget.checked
+					p.textContent = `current의 상태 : ${current}`
+				})
+				const a = document.querySelector('a')
+				a.addEventListener('click', (event) => {
+					if(!current){
+						event.preventDefault()
+					}
+				})
+			})
+		</script>		
+	</head>
+	<body>
+		<input type = "checkbox">
+		<span>링크 활성화</span>
+		<br>
+		<a href ="http://hanbit.co.kr">한빛미디어</a>
+		<p>
+			
+		</p>
+	</body>
+</html>
