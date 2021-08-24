@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			class Rectangle {
+				constructor(width, height) {
+					this.width = width;
+					this.height = height;
+				}
+				print() {
+					console.log(`${this.width} ,${this.height}`);
+				}
+				getPerimeter() {
+					return 2 * (this.width + this.height);
+				}
+				getArea() {
+					return this.width * this.height;
+				}
+			}
+			class squre {
+				#length
+				constructor(length) {
+					this.setLength(length);
+				}
+				setLength(length) {
+					if (length <= 0) {
+						throw '길이는 0보다 커야함';
+					}
+					this.#length = length
+				}
+				getLength(value){
+					return this.#length
+				}
+				getPerimeter() {
+					return 4 * this.#length;
+				}
+				getArea() {
+					return this.#length * this.#length;
+				}
+			}
+			const test1 = new Rectangle(1, 2);
+			test1.print();
+			console.log(`둘레 : ${test1.getPerimeter()}`);
+			console.log(`넓이 : ${test1.getArea()}`);
+			const test2 = new squre(10);
+			console.log(`한 변의 길이는 ${test2.getLength()}`)
+			console.log(`둘레 : ${test2.getPerimeter()}`);
+			console.log(`넓이 : ${test2.getArea()}`);
+			test2.setLength(-10)
+		</script>
+	</head>
+	<body></body>
+</html>
